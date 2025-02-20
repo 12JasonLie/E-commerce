@@ -237,3 +237,11 @@
   #search {
     width: 600px;
   }
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  nav ul li {
+      display: block;
+      margin: 10px 0;
+    }
+}
