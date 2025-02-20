@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rina Mart</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div id="header">
+        <div id="logo"> Rina Mart</div>
+        <input type="text" placeholder="Cari di Sini" id="search">
+        <button onclick="searchProducts()">Cari</button>
+        <a href="https://sekolah.data.kemdikbud.go.id/index.php/chome/profil/0C8BDFE0-685B-4A79-9A07-4D3C570044F0">
+            About us</a>
+        <a href="https://instagram.com/sekolahpelitakasihlawang/">instagram</a>
+    </div>
+
+    <!-- Image Caraousel (gagal) -->
+    <div id="banner">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img id="slide-1" src="https://cf.shopee.co.id/file/6fd375d5bf1778bfb94ebfa6156e9b4e">
+                <img id="slide-2" src="http://dariuscooks.tv/wp-content/uploads/2019/01/livekindly_pink_oreos.jpg">
+                <img id="slide-3"
+                    src="data:image/jpeg;base64,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">
+
+            </div>
+        </div>
+        <div class="dots">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+        </div>
+    </div>
+    <div id="caption">
+        <small class="caption">Slide the picture to see discounts and new products</small>
+
+    </div>
+
+    <!-- Cart -->
+    <div class="cart">
+        <h2>Cart</h2>
+        <ul class="cart-items"></ul>
+        <p class="total">Total: Rp.<span id="total1">0</span></p>
+        <button class="checkout" onclick="checkout1()">Checkout</button>
+        <button class="cancel" onclick="Cancelorder()">Cancel order</button>
+    </div>
+    <div id="checkout">
+        
+        
+        <!-- Modal Qris -->
+        <div id="box">
+            <div>
+                <dialog class="modal" id="modal">
+                    <h2>Qris</h2>
+                    <img id="qris"
+                        src="https://play-lh.googleusercontent.com/lomBq_jOClZ5skh0ELcMx4HMHAMW802kp9Z02_A84JevajkqD87P48--is1rEVPfzGVf">
+                    <br> tolong jangan dianggap serius ya, masih dalam perbaikan ini <br>
+                    <button class="button close-button">close</button>
+                </dialog>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Products -->
+    <div id="main">
+        <div class="products-container">
+
+            <section class="product" id="popmie-pedas">
+                <img class="gambar"
+                    src="https://images.tokopedia.net/img/cache/500-square/product-1/2018/11/1/35604504/35604504_c42ca729-b4c6-4e89-8ab8-0610be34ee33_700_700.png">
+                <h3>Pop Mie Pedas</h3>
+                <h4>Rp.8000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="popmie">
+                <img class="gambar" src="https://www.popmie.com/uploads/product/rasa-ayam_text.png">
+                <h3>Pop Mie</h3>
+                <h4>Rp.7000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="popmie-kecil">
+                <img class="gambar"
+                    src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//97/MTA-3452695/indomie_mie-instant-indomie-35gr-mini-popmie-soto_full02.jpg">
+                <h3>Pop Mie Kecil</h3>
+                <h4>Rp.5000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+            </div>
+
+        <div class="products-container">
+            <section class="product" id="rice-bowl">
+                <img class="gambar"
+                    src="https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2021/03/20/resep-nasi-ayam-mangkok-menu-sa-20210320095828.jpg">
+                <h3>Rice Bowl</h3>
+                <h4>Rp.5000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="aqua">
+                <img class="gambar" src="https://cf.shopee.co.id/file/8f9bc0f9140a0efc1ccdd3b2fccba25a">
+                <h3>Aqua</h3>
+                <h4>Rp.3000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="beng-beng">
+                <img class="gambar" src="http://www.mayora.com/storage/files/2017-bengbeng.png">
+                <h3>Beng-Beng</h3>
+                <h4>Rp.2000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+        </div>
+
+        <div class="products-container">
+            <section class="product" id="siomay">
+                <img class="gambar"
+                    src="https://cdn0-production-images-kly.akamaized.net/ineYGN1ofC14lFFtuE5QVnjmxW8=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2834715/original/082188900_1561183059-shutterstock_1134726890.jpg">
+                <h3>Siomay</h3>
+                <h4>Rp.5000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="sosis-bakar">
+                <img class="gambar"
+                    src="https://media.suara.com/pictures/970x544/2022/12/16/65328-ilustrasi-sosis-bakar-resep-sosis-bakar-pexels.jpg">
+                <h3>Sosis Bakar</h3>
+                <h4>Rp.5000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="cold-drinks">
+                <img class="gambar" src="https://wallpapercave.com/wp/wp7289347.jpg">
+                <h3>Cold Drinks</h3>
+                <h4>Rp.5000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+        </div>
+
+        <div class="products-container">
+            <section class="product" id="teh-javana">
+                <img class="gambar"
+                    src="https://shop.hypermart.co.id/hypermart/uploads/documents/37115925-JAVANA-TEH-MELATI-PET-350-ML.jpg">
+                <h3>Teh Javana</h3>
+                <h4>Rp.3500</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="kopi">
+                <img class="gambar"
+                    src="https://cdn.zmescience.com/wp-content/uploads/2018/04/Cappuccino_at_Sightglass_Coffee.jpg">
+                <h3>Kopi Panas/Dingin</h3>
+                <h4>Rp.3000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="isoplus">
+                <img class="gambar" src="https://cf.shopee.co.id/file/88baf55476470ec5a0817e497b570518">
+                <h3>Iso Plus</h3>
+                <h4>Rp.3500</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="gorengan">
+                <img class="gambar"
+                    src="https://tse1.mm.bing.net/th?id=OIP.LjYU4Vcq5KCQpKFFh2wp_gHaFC&pid=Api&P=0&h=180">
+                <h3>Aneka Gorengan</h3>
+                <h4>Rp.3000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="indomilk">
+                <img class="gambar" src="https://cf.shopee.co.id/file/834bba115df8bbd8100c34cecb8ea6ab">
+                <h3>Indomilk</h3>
+                <h4>Rp.5000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="yupi">
+                <img class="gambar" src="
+                https://media.naheed.pk/catalog/product/cache/49dcd5d85f0fa4d590e132d0368d8132/1/0/1033548-1.jpg">
+                <h3>Yupi</h3>
+                <h4>Rp.500</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="sosis">
+                <img class="gambar" src="https://cf.shopee.co.id/file/1da74708f665d60c78ffa8cbf9130581">
+                <h3>Sosis</h3>
+                <h4>Rp.1000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="mawar">
+                <img class="gambar"
+                    src="https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/295e79ab-9d6a-4e6a-bfe5-7a7468d750ff_IMG_20201005_200223_690.jpg">
+                <h3>Aneka Product Mawar (Kripik)</h3>
+                <h4>Rp.2500</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="oreo">
+                <img class="gambar" src="http://dariuscooks.tv/wp-content/uploads/2019/01/livekindly_pink_oreos.jpg">
+                <h3>Oreo</h3>
+                <h4>Rp.2000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="nabati">
+                <img class="gambar" src="https://cf.shopee.co.id/file/sg-11134201-22110-n8j209rpucjvf7">
+                <h3>Aneka Wafer Nabati</h3>
+                <h4>Rp.2000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="chocolatos">
+                <img class="gambar" src="https://cf.shopee.co.id/file/9e5f202ba759c9dc3360ac88540805e0">
+                <h3>Chocolatos</h3>
+                <h4>Rp.1000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="pidi-jelly">
+                <img class="gambar" src="https://filebroker-cdn.lazada.co.id/kf/S62e26fc578c147ad8d3d2568863f32a43.jpg">
+                <h3>Pidi Jelly</h3>
+                <h4>Rp.1000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="nextar">
+                <img class="gambar" src="https://cf.shopee.co.id/file/13f60cf173a48cc45ced58795086b507">
+                <h3>Aneka variant Nextar</h3>
+                <h4>Rp.2000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="floridina">
+                <img class="gambar" src="https://cf.shopee.co.id/file/6fd375d5bf1778bfb94ebfa6156e9b4e">
+                <h3>Floridina</h3>
+                <h4>Rp.3500</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="roti">
+                <img class="gambar"
+                    src="https://pict-a.sindonews.net/dyn/850/pena/news/2023/02/22/185/1028991/perbedaan-roti-gandum-dan-roti-tawar-mana-yang-lebih-sehat-itf.jpg">
+                <h3>Roti</h3>
+                <h4>Rp.2500</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="superstar">
+                <img class="gambar"
+                    src="https://smb-padiumkm-images-public-prod.oss-ap-southeast-5.aliyuncs.com/product/image/16062023/648b20dcf0868542e6afe31e/648c7bb5174961d84fee6d84/d81b9135c08b272f7171394d5b9390.jpg">
+                <h3>Superstar</h3>
+                <h4>Rp.1000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="hansel">
+                <img class="gambar"
+                    src="https://images.tokopedia.net/img/cache/700/VqbcmM/2022/7/11/b495de62-1078-415e-ace5-dab790740fe3.jpg">
+                <h3>Hansel</h3>
+                <h4>Rp.1000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="citato">
+                <img class="gambar"
+                    src="https://img.lazcdn.com/g/p/4c8489b623dbf529c563541f2a9e75d3.jpg_720x720q80.jpg">
+                <h3>Citato</h3>
+                <h4>Rp.2000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+
+            <section class="product" id="garuda">
+                <img class="gambar"
+                    src="https://images.tokopedia.net/img/cache/700/hDjmkQ/2022/10/19/0dfacd8b-fde4-450d-bde8-832058033324.jpg">
+                <h3>Garuda</h3>
+                <h4>Rp.2000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+
+            <section class="product" id="pilus">
+                <img class="gambar"
+                    src="https://images.tokopedia.net/img/cache/500-square/VqbcmM/2022/10/9/50e51ddc-d6e7-4207-aeed-b0793f3e2a32.jpg">
+                <h3>Pilus</h3>
+                <h4>Rp.2000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="timebreak">
+                <img class="gambar"
+                    src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/12/12/bd514f6f-4b3e-4a42-8c18-bd7312a1bca2.jpg">
+                <h3>Timebreak</h3>
+                <h4>Rp.1000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="gery">
+                <img class="gambar"
+                    src="https://www.mirotakampus.com/resources/assets/images/product_images/1603285897.malkist.JPG">
+                <h3>Gery</h3>
+                <h4>Rp.1000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+
+            <section class="product" id="choki-choki">
+                <img class="gambar"
+                    src="https://images-cdn.ubuy.ae/634e6e715e499666907fbdc7-choki-choki-5-x-11g-chocolate-paste-6.jpg">
+                <h3>Choki-choki</h3>
+                <h4>Rp.1000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+
+            <section class="product" id="permen">
+                <img class="gambar"
+                    src="https://images.tokopedia.net/img/cache/700/product-1/2018/8/8/703885/703885_7293ca39-d344-4ec2-b7c8-10e1f4972a98_700_525.jpg">
+                <h3>Permen</h3>
+                <h4>Rp.500</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="hot-drink">
+                <img class="gambar"
+                    src="https://www.acouplecooks.com/wp-content/uploads/2021/08/Cafe-Au-Lait-004-735x919.jpg">
+                <h3>Hot Drink</h3>
+                <h4>Rp.2500</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="seaweed">
+                <img class="gambar"
+                    src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//93/MTA-81353127/no-brand_cemilan-rumput-laut-rumut-si-aa-rans-box-isi-12-pcs_full01.jpg">
+                <h3>Seaweed</h3>
+                <h4>Rp.1000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+            <section class="product" id="moci">
+                <img class="gambar"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsCeIUGLiSKZTyugQvhCAvJKu7scfi793knA&usqp=CAU">
+                <h3>Moci</h3>
+                <h4>Rp.2000</h4>
+                <button class="addToCart">Buy</button>
+            </section>
+            <div class="flex-divider"></div>
+
+        </div>
+        <script src="main.js"></script>
+
+</html>
